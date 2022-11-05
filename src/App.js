@@ -1,10 +1,13 @@
-import GlobalStyle from "./GlobalStyle";
-import styled from "styled-components";
+import theme from "./theme";
+import "@fontsource/nanum-gothic";
+
+import { ChakraProvider } from "@chakra-ui/react";
+import Hero from "@components/Hero";
 function App() {
   return (
-    <>
-      <GlobalStyle />
-    </>
+    <ChakraProvider theme={theme}>
+      <Hero />
+    </ChakraProvider>
   );
 }
 
