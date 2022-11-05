@@ -8,6 +8,7 @@ import HeroTwo from "@components/HeroTwo";
 import Features from "@components/Features";
 import Statistics from "@components/Statistics";
 import Pricing from "@components/Pricing";
+import Footer from "@components/Footer";
 function App() {
   return (
     <ChakraProvider theme={theme}>
@@ -17,6 +18,7 @@ function App() {
       <Statistics />
       <Pricing />
       <HeroTwo />
+      <Footer />
     </ChakraProvider>
   );
 }
