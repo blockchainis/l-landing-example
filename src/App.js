@@ -9,10 +9,12 @@ import Features from "@components/Features";
 import Statistics from "@components/Statistics";
 import Pricing from "@components/Pricing";
 import Footer from "@components/Footer";
+import NavBar from "@components/NavBar";
 function App() {
   return (
     <ChakraProvider theme={theme}>
       <Fonts />
+      <NavBar />
       <Hero />
       <Features />
       <Statistics />

@@ -13,7 +13,7 @@ import lockedImage from "@assets/locked.png";
 
 export default function Hero() {
   return (
-    <Container maxW={"5xl"}>
+    <Container maxW={"5xl"} mt={58}>
       <Stack
         textAlign={"center"}
         align={"center"}

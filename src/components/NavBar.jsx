@@ -28,14 +28,15 @@ export default function NavBar() {
   return (
     <Box position="fixed" top={0} width={"100%"} zIndex={999}>
       <Flex
-        bg={useColorModeValue("black", "gray.800")}
+        bg={"rgba(0, 0, 0, 0.8)"}
+        backdropFilter={"saturate(100%) blur(0px)"}
         color={useColorModeValue("white", "white")}
         minH={"60px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderBottom={1}
         borderStyle={"solid"}
-        borderColor={useColorModeValue("gray.200", "gray.900")}
+        borderColor={"purple.500"}
         align={"center"}
       >
         <Flex
@@ -55,9 +56,10 @@ export default function NavBar() {
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            color={useColorModeValue("white", "white")}
+            color={"purple.400"}
+            fontFamily={"SEBANG_Gothic_Bold"}
           >
-            블랙 펑크
+            비담
           </Text>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
@@ -72,26 +74,17 @@ export default function NavBar() {
           spacing={6}
         >
           <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"#"}
-          >
-            Sign In
-          </Button>
-          <Button
             display={{ base: "none", md: "inline-flex" }}
             fontSize={"sm"}
             fontWeight={600}
             color={"white"}
-            bg={"pink.400"}
+            bg={"purple.400"}
             href={"#"}
             _hover={{
-              bg: "pink.300",
+              bg: "purple.300",
             }}
           >
-            Sign Up
+            비담 시작하기
           </Button>
         </Stack>
       </Flex>
@@ -104,9 +97,9 @@ export default function NavBar() {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue("gray.600", "gray.200");
-  const linkHoverColor = useColorModeValue("gray.800", "white");
-  const popoverContentBgColor = useColorModeValue("white", "gray.800");
+  const linkColor = "white";
+  const linkHoverColor = "purple.400";
+  const popoverContentBgColor = "black";
 
   return (
     <Stack direction={"row"} spacing={4}>
@@ -160,13 +153,13 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
       display={"block"}
       p={2}
       rounded={"md"}
-      _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
+      _hover={{ bg: "purple.400" }}
     >
       <Stack direction={"row"} align={"center"}>
         <Box>
           <Text
             transition={"all .3s ease"}
-            _groupHover={{ color: "pink.400" }}
+            _groupHover={{ color: "purple.800" }}
             fontWeight={500}
           >
             {label}
@@ -182,7 +175,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
           align={"center"}
           flex={1}
         >
-          <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
+          <Icon color={"purple.400"} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
     </Link>
@@ -191,11 +184,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
 
 const MobileNav = () => {
   return (
-    <Stack
-      bg={useColorModeValue("white", "gray.800")}
-      p={4}
-      display={{ md: "none" }}
-    >
+    <Stack bg={"black"} p={4} display={{ md: "none" }}>
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
