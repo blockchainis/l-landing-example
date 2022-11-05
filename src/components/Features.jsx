@@ -33,11 +33,8 @@ const Feature = ({ text, icon, iconBg }) => {
 
 export default function Features() {
   return (
-    <Flex py={12} px={20} height={"100vh"} align={"center"} justify={"center"}>
-      <SimpleGrid
-        columns={{ base: 1, md: 2 }}
-        spacing={10}
-      >
+    <Flex py={12} px={10} height={"100vh"} align={"center"} justify={"center"}>
+      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Stack spacing={4}>
           <Text
             textTransform={"uppercase"}

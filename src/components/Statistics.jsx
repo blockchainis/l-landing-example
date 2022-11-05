@@ -53,7 +53,7 @@ export default function Statistics() {
     >
       <Box
         bgImage={"linear-gradient(to right, #8c1eaa, #272842)"}
-        filter={"blur(5000px)"}
+        filter={"blur(1000px)"}
         position={"absolute"}
         width={"300px"}
         height={"100vh"}

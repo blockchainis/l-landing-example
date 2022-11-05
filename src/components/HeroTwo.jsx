@@ -13,7 +13,12 @@ import {
 export default function HeroTwo() {
   return (
     <>
-      <Container maxW={"3xl"}>
+      <Box
+        height={"100vh"}
+        display={"flex"}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
         <Stack
           as={Box}
           textAlign={"center"}
@@ -30,7 +35,7 @@ export default function HeroTwo() {
               오직 당신만의
             </Text>
           </Heading>
-          <Text color={"gray.200"}>
+          <Text color={"gray.200"} maxW={"3xl"}>
             항상 마음속으로만 간직한 이야기 하지만 기억하고 싶었던 이야기 누군가
             볼까 두려웠던 속마음의 이야기 이제는 비담에 담아주시면 됩니다. 어느
             누구도 볼 수 없습니다. 오로지 당신만 볼 수 있습니다.
@@ -57,7 +62,7 @@ export default function HeroTwo() {
             </Button>
           </Stack>
         </Stack>
-      </Container>
+      </Box>
     </>
   );
 }
