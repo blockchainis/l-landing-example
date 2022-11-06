@@ -60,27 +60,21 @@ export default function Hero() {
             비담 알아보기
           </Button>
         </Stack>
-        <Flex w={"full"} justifyContent={"center"} alignItems={"self"}>
-          <Flex
-            height={{ sm: "5rem", lg: "10rem" }}
+        <Flex
+          w={"full"}
+          justify={"center"}
+          align={"center"}
+          position={"relative"}
+        >
+          <Image height={{ sm: "5rem", lg: "10rem" }} src={lockedImage}></Image>
+          <Box
+            bgGradient={"linear(to-r, #F213A4, #040BBF)"}
             width={{ sm: "5rem", lg: "10rem" }}
-            justify={"center"}
-            align={"center"}
-            position={"relative"}
-            mt={10}
-          >
-            <Image
-              height={{ sm: "5rem", lg: "10rem" }}
-              src={lockedImage}
-            ></Image>
-            <Box
-              bgImage={"linear-gradient(to right, #F213A4, #040BBF)"}
-              width={"100%"}
-              height={"100%"}
-              position={"absolute"}
-              filter={"blur(90px)"}
-            ></Box>
-          </Flex>
+            height={{ sm: "5rem", lg: "10rem" }}
+            position={"absolute"}
+            filter={"blur(90px)"}
+            zIndex={-2}
+          ></Box>
         </Flex>
       </Stack>
     </Container>
