@@ -33,7 +33,13 @@ const Feature = ({ text, icon, iconBg }) => {
 
 export default function Features() {
   return (
-    <Flex py={12} px={10} height={"100vh"} align={"center"} justify={"center"}>
+    <Flex
+      py={12}
+      px={{ sm: "10", md: "50", lg: "100" }}
+      height={"100vh"}
+      align={"center"}
+      justify={"center"}
+    >
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Stack spacing={4}>
           <Text
@@ -66,7 +72,7 @@ export default function Features() {
               }
               iconBg={"purple.100"}
               text={
-                "계좌정보와 금융정보를 비담에서 보관하고 관리할 수 있습니다."
+                "계좌 정보와 금융 정보를 비담에서 보관하고 관리할 수 있습니다."
               }
             />
             <Feature
@@ -80,7 +86,7 @@ export default function Features() {
               }
               iconBg={useColorModeValue("purple.100", "purple.900")}
               text={
-                "누구한테도 보여주고 싶지 않은 비밀이야기 비담에서 간직할 수 있습니다."
+                "누구한테도 보여주고 싶지 않은 비밀 이야기 비담에서 간직할 수 있습니다."
               }
             />
           </Stack>
