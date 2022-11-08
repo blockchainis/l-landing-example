@@ -11,6 +11,7 @@ import {
 import { BsPerson } from "react-icons/bs";
 import { FiServer } from "react-icons/fi";
 import { GoLocation } from "react-icons/go";
+import { forwardRef } from "react";
 
 function StatsCard(props) {
   const { title, stat, icon } = props;
@@ -40,7 +41,7 @@ function StatsCard(props) {
   );
 }
 
-export default function Statistics() {
+const Statistics = forwardRef((props, ref) => {
   return (
     <Flex
       maxW="7xl"
@@ -50,6 +51,7 @@ export default function Statistics() {
       height={"100vh"}
       direction={"column"}
       position={"relative"}
+      ref={ref}
     >
       <Box
         bgImage={"linear-gradient(to right, #8c1eaa, #272842)"}
@@ -95,4 +97,5 @@ export default function Statistics() {
       </SimpleGrid>
     </Flex>
   );
-}
+});
+export default Statistics;

@@ -9,8 +9,9 @@ import {
   useColorModeValue,
   createIcon,
 } from "@chakra-ui/react";
+import { forwardRef } from "react";
 
-export default function HeroTwo() {
+const HeroTwo = forwardRef((props, ref) => {
   return (
     <>
       <Box
@@ -18,6 +19,7 @@ export default function HeroTwo() {
         display={"flex"}
         justifyContent={"center"}
         alignItems={"center"}
+        ref={ref}
       >
         <Stack
           as={Box}
@@ -65,7 +67,7 @@ export default function HeroTwo() {
       </Box>
     </>
   );
-}
+});
 
 const Arrow = createIcon({
   displayName: "Arrow",
@@ -79,3 +81,5 @@ const Arrow = createIcon({
     />
   ),
 });
+
+export default HeroTwo;

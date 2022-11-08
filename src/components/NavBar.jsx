@@ -22,7 +22,7 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 
-export default function NavBar() {
+export default function NavBar({ number, onShowSection }) {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -63,7 +63,7 @@ export default function NavBar() {
           </Text>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
-            <DesktopNav />
+            <DesktopNav number={number} onShowSection={onShowSection} />
           </Flex>
         </Flex>
 
@@ -96,27 +96,26 @@ export default function NavBar() {
   );
 }
 
-const DesktopNav = () => {
-  const linkColor = "white";
+const DesktopNav = ({ number, onShowSection }) => {
   const linkHoverColor = "purple.400";
   const popoverContentBgColor = "black";
 
   return (
     <Stack direction={"row"} spacing={4}>
-      {NAV_ITEMS.map((navItem) => (
+      {NAV_ITEMS.map((navItem, index) => (
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
               <Link
                 p={2}
-                href={navItem.href ?? "#"}
                 fontSize={"sm"}
                 fontWeight={500}
-                color={linkColor}
+                color={index === number ? "purple.300" : "white"}
                 _hover={{
                   textDecoration: "none",
                   color: linkHoverColor,
                 }}
+                onClick={() => onShowSection(index)}
               >
                 {navItem.label}
               </Link>
@@ -133,7 +132,11 @@ const DesktopNav = () => {
               >
                 <Stack>
                   {navItem.children.map((child) => (
-                    <DesktopSubNav key={child.label} {...child} />
+                    <DesktopSubNav
+                      key={child.label}
+                      number={number}
+                      {...child}
+                    />
                   ))}
                 </Stack>
               </PopoverContent>
@@ -247,41 +250,21 @@ const MobileNavItem = ({ label, children, href }) => {
 
 const NAV_ITEMS = [
   {
-    label: "Inspiration",
-    children: [
-      {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
+    label: "히어로",
   },
   {
-    label: "Find Work",
-    children: [
-      {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
-      },
-    ],
+    label: "피처",
   },
   {
-    label: "Learn Design",
+    label: "통계",
     href: "#",
   },
   {
-    label: "Hire Designers",
+    label: "가격",
+    href: "#",
+  },
+  {
+    label: "히어로2",
     href: "#",
   },
 ];

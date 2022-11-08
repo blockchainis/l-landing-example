@@ -12,10 +12,10 @@ import {
 import { IoJournalSharp, IoLogoBitcoin, IoWalletSharp } from "react-icons/io5";
 
 import securityImage from "@assets/security.png";
-
+import { forwardRef } from "react";
 const Feature = ({ text, icon, iconBg }) => {
   return (
-    <Stack direction={"row"} align={"center"}>
+    <Stack direction={"row"} align={"center"} id={"feature"}>
       <Flex
         w={8}
         h={8}
@@ -31,7 +31,8 @@ const Feature = ({ text, icon, iconBg }) => {
   );
 };
 
-export default function Features() {
+const Features = forwardRef((props, ref) => {
+  console.log(ref);
   return (
     <Flex
       py={12}
@@ -39,6 +40,7 @@ export default function Features() {
       height={"100vh"}
       align={"center"}
       justify={"center"}
+      ref={ref}
     >
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Stack spacing={4}>
@@ -102,4 +104,6 @@ export default function Features() {
       </SimpleGrid>
     </Flex>
   );
-}
+});
+
+export default Features;

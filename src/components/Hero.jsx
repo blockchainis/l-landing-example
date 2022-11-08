@@ -10,10 +10,10 @@ import {
   Box,
 } from "@chakra-ui/react";
 import lockedImage from "@assets/locked.png";
-
-export default function Hero() {
+import { forwardRef } from "react";
+const Hero = forwardRef((props, ref) => {
   return (
-    <Container maxW={"5xl"} mt={58}>
+    <Container maxW={"5xl"} mt={58} ref={ref}>
       <Stack
         textAlign={"center"}
         align={"center"}
@@ -79,7 +79,7 @@ export default function Hero() {
       </Stack>
     </Container>
   );
-}
+});
 
 const ImageBox = () => {
   return (
@@ -88,3 +88,5 @@ const ImageBox = () => {
     </Box>
   );
 };
+
+export default Hero;
