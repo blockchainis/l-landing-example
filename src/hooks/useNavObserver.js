@@ -15,12 +15,14 @@ export default function useNavObserver(cb) {
     const observer = new IntersectionObserver(intersectionCallback, {
       threshold: 0.7,
     });
+
     if (targetRef.current) {
-      observer.observe(targetRef.current);
+      const targetEl = targetRef.current;
+      observer.observe(targetEl);
+      return () => {
+        observer.unobserve(targetEl);
+      };
     }
-    return () => {
-      observer.disconnect();
-    };
   }, [targetRef]);
 
   return targetRef;

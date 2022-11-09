@@ -32,7 +32,6 @@ const Feature = ({ text, icon, iconBg }) => {
 };
 
 const Features = forwardRef((props, ref) => {
-  console.log(ref);
   return (
     <Flex
       py={12}
